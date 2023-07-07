@@ -1,5 +1,5 @@
 from os import system
-from colorama import init, Fore, Back, Style
+from colorama import init, Fore
 init()
 winnerStat = (
     (0, 1, 2), (0, 3, 6), (0, 4, 8),
