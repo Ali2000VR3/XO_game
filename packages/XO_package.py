@@ -1,18 +1,18 @@
 from os import system
 from colorama import init, Fore
 init()
-winnerStat = (
-    (0, 1, 2), (0, 3, 6), (0, 4, 8),
-    (3, 4, 5), (1, 4, 7), (2, 4, 6),
-    (6, 7, 8), (2, 5, 8)
-)
+
 
 
 class XO:
     def __init__(self) -> None:
         self.board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
         self.player = 'O'
-
+        self.winnerStat = (
+            (0, 1, 2), (0, 3, 6), (0, 4, 8),
+            (3, 4, 5), (1, 4, 7), (2, 4, 6),
+            (6, 7, 8), (2, 5, 8)
+        )
     def chack(self, index: int) -> bool:
         if self.board[index-1] != 'X' and self.board[index-1] != 'O':
             return True
@@ -33,7 +33,7 @@ class XO:
         print('', '-'*20, '\n')
 
     def chack_winner(self):
-        for win in winnerStat:
+        for win in self.winnerStat:
             if self.board[win[0]] == 'O' and self.board[win[1]] == 'O' and self.board[win[2]] == 'O':
                 return True, 'O'
             if self.board[win[0]] == 'X' and self.board[win[1]] == 'X' and self.board[win[2]] == 'X':
