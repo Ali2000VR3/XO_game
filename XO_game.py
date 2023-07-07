@@ -5,7 +5,7 @@ board = XO()
 player = 'O'
 
 board.show_board()
-x = 1
+
 while True:
     for i, item in enumerate(board.board):
         if board.chack(i):
@@ -26,4 +26,4 @@ while True:
         else:
             board.player = 'X'
 
-    x += 1
+
